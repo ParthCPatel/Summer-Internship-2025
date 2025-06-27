@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  front:
+    build: ./public
+    depends_on:
+      - api
+    ports:
+      - 3000:3000
+    networks:
+      - custom_network
+  api:
+    build: ./server
+    ports:
+      - 5000:5000
+    networks:
+      - custom_network
+    environment:
+      - PORT=5000
+      - MONGO_URL=mongodb://mongodb:27017/wanderlust
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    networks:
+      - custom_network
+    # volumes:
+    #   - mongo-data:/data/db
+      
+networks:
+  custom_network:
+    driver: bridge
