@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>Tasks</h2>
+    <div class="task-input">
+      <input id="taskInput" type="text" placeholder="New task…" />
+      <button id="addTaskBtn">Add</button>
+    </div>
+    <ul id="taskList"></ul>
+
+    <h2>Pomodoro</h2>
+
+    <div class="pomodoro">
+      <span id="timerDisplay">25:00</span>
+      <button id="startPomodoro">Start</button>
+      <button id="stopPomodoro" class="secondary">Stop</button>
+    </div>
+
+    <label class="theme-toggle">
+      <input type="checkbox" id="themeSwitch" />
+      <span class="slider"></span>
+      <span class="label-text">Dark Mode</span>
+    </label>
+    <p class="credits">Blocked sites: YouTube, Facebook, Instagram</p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
